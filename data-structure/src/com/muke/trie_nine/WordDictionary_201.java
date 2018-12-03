@@ -61,7 +61,7 @@ public class WordDictionary_201 {
             }
             cur = cur.next.get(c);
         }
-        // 循环结束后,最后一个节点的isWord需要设置为true
+        // 循环结束后,最后一个节点的isWord需要设置为true.
         if (!cur.isWord) {
             cur.isWord = true;
         }
