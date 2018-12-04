@@ -3,7 +3,7 @@ package com.muke.trie_nine;
 import java.util.TreeMap;
 
 /**
- * 字典树
+ * 字典树.
  * Trie相对于字符串来说,会比BSTSet性能会好些
  */
 public class Trie {
