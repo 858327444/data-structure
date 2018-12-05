@@ -10,7 +10,7 @@ package com.muke.unionfind_ten;
  */
 public interface UnionFind {
     /**
-     * 获取个数
+     * 获取个数.
      *
      * @return
      */
