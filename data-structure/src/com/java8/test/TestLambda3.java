@@ -18,13 +18,14 @@ public class TestLambda3 {
     @Test
     public void test4() {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
-        Boolean result = compareList(list, (pre) -> pre.size() > 8);
+        Boolean result =  compareList(list,(pre) -> pre.size() > 8);
         System.out.println(result);
     }
 
-    public Boolean compareList(List<Integer> list, Predicate<List> pre) {
+    private Boolean compareList(List<Integer> list,Predicate<List> pre) {
         return pre.test(list);
     }
+
 
     /**
      * Function<T,R> 函数型接口
@@ -35,37 +36,39 @@ public class TestLambda3 {
         System.out.println(result);
     }
 
-    public String strHandler(String str, Function<String, String> fun) {
+    private String strHandler(String str, Function<String, String> fun) {
         return fun.apply(str);
     }
+
 
     /**
      * Supplier<T> 供给型接口
      */
     @Test
     public void test2() {
-        List<Integer> list = getNumber(20, () -> (int) (Math.random() * 101));
+        List list = getNumber(20, () -> (int) (Math.random() * 101));
         list.forEach(System.out::println);
     }
 
-    private List<Integer> getNumber(int n, Supplier<Integer> supplier) {
+    private List getNumber(int n, Supplier<Integer> sup) {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            list.add(supplier.get());
+            list.add(sup.get());
         }
         return list;
     }
+
 
     /**
      * Consumer<T> : 消费型接口消费型接口
      */
     @Test
     public void test1() {
-        happy(1000, con -> System.out.println("此次行程花费了" + con + "元"));
+        happy(1000, con -> System.out.print("你们刚哥喜欢大保健,花费了: " + con + "元"));
     }
 
-    public void happy(double money, Consumer con) {
+    private void happy(double money, Consumer con) {
         con.accept(money);
-
     }
+
 }

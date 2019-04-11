@@ -38,6 +38,14 @@ public class TestStreamAPI3 {
     );
 
     @Test
+    public void test99999() {
+        Optional<Double> reduce = employees.stream()
+                .map(Employee::getSalary)
+                .reduce(Double::sum);
+        System.out.println(reduce.get());
+    }
+
+    @Test
     public void test8() {
         String collect = employees.stream()
                 .map(Employee::getName)

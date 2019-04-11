@@ -9,6 +9,15 @@ public class Employee implements Serializable {
     private Double salary;
     private Status status;
 
+    private int id;
+
+
+    public Employee(int id, String name, int age, double salary) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
 
     public Employee() {
     }
@@ -24,6 +33,14 @@ public class Employee implements Serializable {
         this.age = age;
         this.salary = salary;
         this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Status getStatus() {
@@ -91,7 +108,7 @@ public class Employee implements Serializable {
                 '}';
     }
 
-    public  enum Status {
+    public enum Status {
         BUSY,
         FREE,
         VOCATION;
